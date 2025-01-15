@@ -1,0 +1,25 @@
+﻿@page "/"
+@using MyPortfolio.Shared.Services
+@inject IFormFactor FormFactor
+
+<PageTitle>Home</PageTitle>
+
+<div id="box"></div>
+
+@code {
+    private string factor => FormFactor.GetFormFactor();
+    private string platform => FormFactor.GetPlatform();
+
+    protected override async Task OnInitializedAsync ()
+    {
+       
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender)
+        {
+             await jsInterop.CreateBoxModal("box");
+        }
+    }
+}
