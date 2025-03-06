@@ -12,14 +12,14 @@
 
     protected override async Task OnInitializedAsync ()
     {
-       
+        await Task.Delay(0);
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if(firstRender)
         {
-             await jsInterop.CreateBoxModal("box");
+
         }
     }
 }
